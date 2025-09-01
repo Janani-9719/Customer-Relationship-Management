@@ -1,0 +1,51 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1-create-account-table
+      author: Janani-9719
+      changes:
+        - createTable:
+            tableName: customers
+            columns:
+              - column:
+                  name: account_id
+                  type: INT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: first_name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: last_name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: email
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: phone_number
+                  type: VARCHAR(50)
+              - column:
+                  name: address
+                  type: VARCHAR(255)
+              - column:
+                  name: city
+                  type: VARCHAR(100)
+              - column:
+                  name: state
+                  type: VARCHAR(100)
+              - column:
+                  name: country
+                  type: VARCHAR(100)
+              - column:
+                  name: date_created
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
